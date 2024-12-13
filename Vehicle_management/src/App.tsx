@@ -4,9 +4,9 @@ import VehicleForm from "./components/VehicleForm";
 
 export default function App() {
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col gap-5">
       <Navbar />
-      <div>
+      <div className=" flex flex-col px-10 gap-5">
         <VehicleForm />
         <VehicleTable />
       </div>
