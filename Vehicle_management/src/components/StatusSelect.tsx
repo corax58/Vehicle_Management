@@ -14,7 +14,9 @@ const StatusSelect = ({ Vehicle }: { Vehicle: Vehicle }) => {
       <Select.Content variant="soft">
         <Select.Group>
           {VehicleStatus.map((status) => (
-            <Select.Item value={status.value}>{status.label} </Select.Item>
+            <Select.Item key={status.id} value={status.value}>
+              {status.label}{" "}
+            </Select.Item>
           ))}
         </Select.Group>
       </Select.Content>

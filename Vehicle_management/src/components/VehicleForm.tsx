@@ -82,7 +82,7 @@ const VehicleForm = () => {
                       <Select.Content variant="soft">
                         <Select.Group>
                           {VehicleStatus.map((status) => (
-                            <Select.Item value={status.value}>
+                            <Select.Item value={status.value} key={status.id}>
                               {status.label}{" "}
                             </Select.Item>
                           ))}
