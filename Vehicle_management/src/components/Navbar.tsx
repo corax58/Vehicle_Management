@@ -1,4 +1,4 @@
-import { Button, Popover } from "@radix-ui/themes";
+import { Button } from "@radix-ui/themes";
 import { Car, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 

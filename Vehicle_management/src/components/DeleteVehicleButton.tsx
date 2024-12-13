@@ -1,9 +1,20 @@
+import { useToast } from "@/hooks/use-toast";
 import useDeleteVehicle from "@/hooks/useDeleteVehicles";
 import { AlertDialog, Button, Flex } from "@radix-ui/themes";
-import React from "react";
+import { useEffect } from "react";
 
 const DeleteVehicleButton = ({ id }: { id: string }) => {
   const deleteVehicle = useDeleteVehicle();
+  const { toast } = useToast();
+
+  useEffect(() => {
+    if (deleteVehicle.isSuccess) {
+      toast({
+        title: "Delete succesful",
+        variant: "destructive",
+      });
+    }
+  }, [deleteVehicle.isSuccess]);
 
   return (
     <AlertDialog.Root>

@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import VehicleTable from "./components/VehicleTable";
 import VehicleForm from "./components/VehicleForm";
+import { Toaster } from "./components/ui/toaster";
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
         <VehicleForm />
         <VehicleTable />
       </div>
+      <Toaster />
     </div>
   );
 }
