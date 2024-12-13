@@ -1,6 +1,7 @@
 import useFetchVehicles from "@/hooks/useFetchVehicles";
 import { Table } from "@radix-ui/themes";
 import DeleteVehicleButton from "./DeleteVehicleButton";
+import StatusSelect from "./StatusSelect";
 
 const VehicleTable = () => {
   const { data: Vehicles, error, isPending } = useFetchVehicles();
@@ -24,7 +25,9 @@ const VehicleTable = () => {
             <Table.RowHeaderCell>{Vehicle.name}</Table.RowHeaderCell>
             <Table.RowHeaderCell>{Vehicle.type}</Table.RowHeaderCell>
             <Table.RowHeaderCell>{Vehicle.model}</Table.RowHeaderCell>
-            <Table.RowHeaderCell>{Vehicle.status}</Table.RowHeaderCell>
+            <Table.RowHeaderCell>
+              <StatusSelect Vehicle={Vehicle} />
+            </Table.RowHeaderCell>
             <Table.RowHeaderCell>
               <DeleteVehicleButton id={Vehicle._id} />
             </Table.RowHeaderCell>
