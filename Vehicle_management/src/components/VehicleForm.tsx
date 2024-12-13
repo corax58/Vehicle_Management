@@ -8,15 +8,23 @@ import {
   Text,
   Select,
 } from "@radix-ui/themes";
+import { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 
 const VehicleForm = () => {
   const createVehicle = useCreateVehicles();
   const { register, handleSubmit, control } = useForm();
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (createVehicle.isSuccess) {
+      setIsOpen(false);
+    }
+  }, [createVehicle.isSuccess]);
 
   return (
     <div>
-      <Dialog.Root>
+      <Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
         <Dialog.Trigger>
           <Button>Add a vehicle</Button>
         </Dialog.Trigger>
