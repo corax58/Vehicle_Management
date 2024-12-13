@@ -1,11 +1,16 @@
 import useFetchVehicles from "@/hooks/useFetchVehicles";
-import { Table } from "@radix-ui/themes";
+import { Spinner, Table } from "@radix-ui/themes";
 import DeleteVehicleButton from "./DeleteVehicleButton";
 import StatusSelect from "./StatusSelect";
 
 const VehicleTable = () => {
   const { data: Vehicles, error, isPending } = useFetchVehicles();
-  if (isPending) return <p>is loading</p>;
+  if (isPending)
+    return (
+      <div className="w-full flex justify-center">
+        <Spinner />
+      </div>
+    );
   if (error) return <p>Error</p>;
   return (
     <Table.Root variant="surface">

@@ -28,7 +28,7 @@ const VehicleForm = () => {
         <Dialog.Trigger>
           <Button>Add a vehicle</Button>
         </Dialog.Trigger>
-
+        <Dialog.Description />
         <Dialog.Content maxWidth="450px">
           <Dialog.Title>Add vehicle</Dialog.Title>
           <form
